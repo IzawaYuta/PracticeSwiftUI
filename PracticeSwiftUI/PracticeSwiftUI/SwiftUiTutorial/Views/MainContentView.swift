@@ -15,4 +15,5 @@ struct MainContentView: View {
 
 #Preview {
     MainContentView()
+        .environment(ModelData())
 }
