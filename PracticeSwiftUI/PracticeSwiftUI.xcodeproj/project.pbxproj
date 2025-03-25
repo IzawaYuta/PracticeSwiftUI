@@ -51,7 +51,7 @@
 				SwiftUiTutorial/No1/Resourse/landmarkData.json,
 				SwiftUiTutorial/No1/Views/Helper/CircleImage.swift,
 				SwiftUiTutorial/No1/Views/Helper/MapView.swift,
-				SwiftUiTutorial/No1/Views/Landmarks/LandmarkList.swift,
+				SwiftUiTutorial/No1/Views/Landmarks/LandmarkListt.swift,
 				SwiftUiTutorial/No1/Views/Landmarks/LandmarkRow.swift,
 				SwiftUiTutorial/No2/Hike.swift,
 				SwiftUiTutorial/No2/Resource/hikeData.json,
@@ -70,7 +70,7 @@
 				SwiftUiTutorial/No1/Views/Helper/CircleImage.swift,
 				SwiftUiTutorial/No1/Views/Helper/FavoriteButton.swift,
 				SwiftUiTutorial/No1/Views/Helper/MapView.swift,
-				SwiftUiTutorial/No1/Views/Landmarks/LandmarkList.swift,
+				SwiftUiTutorial/No1/Views/Landmarks/LandmarkListt.swift,
 				SwiftUiTutorial/No1/Views/Landmarks/LandmarkRow.swift,
 				SwiftUiTutorial/No2/Hike.swift,
 				SwiftUiTutorial/No2/Resource/hikeData.json,
@@ -78,6 +78,13 @@
 				SwiftUiTutorial/PracticeSwiftUIApp.swift,
 			);
 			target = A65A18D02D91721B00181D77 /* MacLandmarks */;
+		};
+		A6C9128A2D92A0C7007946AD /* Exceptions for "MacLandmarks" folder in "PracticeSwiftUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LandmarkCommands.swift,
+			);
+			target = A62532402D8DA0240031E4CA /* PracticeSwiftUI */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -98,6 +105,9 @@
 		};
 		A65A18D22D91721B00181D77 /* MacLandmarks */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A6C9128A2D92A0C7007946AD /* Exceptions for "MacLandmarks" folder in "PracticeSwiftUI" target */,
+			);
 			path = MacLandmarks;
 			sourceTree = "<group>";
 		};

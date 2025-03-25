@@ -1,5 +1,5 @@
 //
-//  LandmarkList.swift
+//  LandmarkListt.swift
 //  PracticeSwiftUI
 //
 //  Created by Engineer MacBook Air on 2025/03/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LandmarkList: View {
+struct LandmarkListt: View {
     @Environment(ModelData.self) var modelData
     @State private var showFavoritesOnly = false
     
@@ -34,6 +34,7 @@ struct LandmarkList: View {
             }
             .animation(.default, value: filteredLandmarks)
             .navigationTitle("Landmarks")
+            .frame(minWidth: 300)
         } detail: {
             Text("Select a Landmark")
         }
@@ -41,6 +42,6 @@ struct LandmarkList: View {
 }
 
 #Preview {
-    LandmarkList()
+    LandmarkListt()
         .environment(ModelData())
 }
