@@ -57,6 +57,14 @@
 				SwiftUiTutorial/No2/Resource/hikeData.json,
 				SwiftUiTutorial/No3/Profile.swift,
 				SwiftUiTutorial/PracticeSwiftUIApp.swift,
+				"SwiftUiTutorial/WatchLandmarks Watch App/Assets.xcassets",
+				"SwiftUiTutorial/WatchLandmarks Watch App/ContentView.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/LandmarkDetail.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/LandmarkList.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/NotificationController.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/NotificationView.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/Preview Content/Preview Assets.xcassets",
+				"SwiftUiTutorial/WatchLandmarks Watch App/PushNotificationPayload.apns",
 			);
 			target = A65A18922D9158F600181D77 /* WatchLandmarks Watch App */;
 		};
@@ -64,6 +72,12 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				SwiftUiTutorial/Assets.xcassets,
+				SwiftUiTutorial/MacLandmarks/Assets.xcassets,
+				SwiftUiTutorial/MacLandmarks/ContentView.swift,
+				SwiftUiTutorial/MacLandmarks/LandmarkCommands.swift,
+				SwiftUiTutorial/MacLandmarks/LandmarkDetail.swift,
+				SwiftUiTutorial/MacLandmarks/LandmarkSettings.swift,
+				"SwiftUiTutorial/MacLandmarks/Preview Content/Preview Assets.xcassets",
 				SwiftUiTutorial/No1/Model/Landmark.swift,
 				SwiftUiTutorial/No1/Model/ModelData.swift,
 				SwiftUiTutorial/No1/Resourse/landmarkData.json,
@@ -79,10 +93,22 @@
 			);
 			target = A65A18D02D91721B00181D77 /* MacLandmarks */;
 		};
-		A6C9128A2D92A0C7007946AD /* Exceptions for "MacLandmarks" folder in "PracticeSwiftUI" target */ = {
+		A6D4DFE12DA14DFA008670DF /* Exceptions for "PracticeSwiftUI" folder in "PracticeSwiftUI" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				LandmarkCommands.swift,
+				SwiftUiTutorial/MacLandmarks/Assets.xcassets,
+				SwiftUiTutorial/MacLandmarks/ContentView.swift,
+				SwiftUiTutorial/MacLandmarks/LandmarkDetail.swift,
+				SwiftUiTutorial/MacLandmarks/LandmarkSettings.swift,
+				"SwiftUiTutorial/MacLandmarks/Preview Content/Preview Assets.xcassets",
+				"SwiftUiTutorial/WatchLandmarks Watch App/Assets.xcassets",
+				"SwiftUiTutorial/WatchLandmarks Watch App/ContentView.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/LandmarkDetail.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/LandmarkList.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/NotificationController.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/NotificationView.swift",
+				"SwiftUiTutorial/WatchLandmarks Watch App/Preview Content/Preview Assets.xcassets",
+				"SwiftUiTutorial/WatchLandmarks Watch App/PushNotificationPayload.apns",
 			);
 			target = A62532402D8DA0240031E4CA /* PracticeSwiftUI */;
 		};
@@ -92,23 +118,11 @@
 		A62532432D8DA0240031E4CA /* PracticeSwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				A6D4DFE12DA14DFA008670DF /* Exceptions for "PracticeSwiftUI" folder in "PracticeSwiftUI" target */,
 				A65A18B12D915B3900181D77 /* Exceptions for "PracticeSwiftUI" folder in "WatchLandmarks Watch App" target */,
 				A65A18ED2D91731F00181D77 /* Exceptions for "PracticeSwiftUI" folder in "MacLandmarks" target */,
 			);
 			path = PracticeSwiftUI;
-			sourceTree = "<group>";
-		};
-		A65A18942D9158F600181D77 /* WatchLandmarks Watch App */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "WatchLandmarks Watch App";
-			sourceTree = "<group>";
-		};
-		A65A18D22D91721B00181D77 /* MacLandmarks */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A6C9128A2D92A0C7007946AD /* Exceptions for "MacLandmarks" folder in "PracticeSwiftUI" target */,
-			);
-			path = MacLandmarks;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -149,8 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				A62532432D8DA0240031E4CA /* PracticeSwiftUI */,
-				A65A18942D9158F600181D77 /* WatchLandmarks Watch App */,
-				A65A18D22D91721B00181D77 /* MacLandmarks */,
 				A62532422D8DA0240031E4CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,9 +217,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				A65A18942D9158F600181D77 /* WatchLandmarks Watch App */,
-			);
 			name = "WatchLandmarks Watch App";
 			packageProductDependencies = (
 			);
@@ -245,9 +254,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A65A18D22D91721B00181D77 /* MacLandmarks */,
 			);
 			name = MacLandmarks;
 			packageProductDependencies = (
