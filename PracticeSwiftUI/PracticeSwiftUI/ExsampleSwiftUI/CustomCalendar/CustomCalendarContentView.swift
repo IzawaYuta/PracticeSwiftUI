@@ -72,55 +72,58 @@ struct CustomCalendarContentView: View {
                 .clipped()
                 
                 Capsule()
-                    .fill(.gray.mix(with: .white, by: 0.6))
+                    .fill(.gray.mix(with: .red, by: 0.6))
                     .frame(width: 40, height: 4)
                     .padding(.bottom, 6)
             }
-                .background()
-                .onChange(of: selection) {}
-                .onChange(of: focusedWeek) { _, n in
-                    print(n.id)
-                }
-                .gesture(
-                    DragGesture(minimumDistance: .zero)
-                        .onChanged { value in
-                            isDragging = true
-                            calendarType = verticalDragOffset == 0 ? .week : .month
-                            
-                            if initialDragOffset == nil {
-                                initialDragOffset = verticalDragOffset
+            .background()
+            .onChange(of: selection) { _, newValue in
+                guard let newValue else { return }
+                title = Calendar.monthAndYear(from: newValue)
+            }
+            .onChange(of: focusedWeek) { _, n in
+                print(n.id)
+            }
+            .gesture(
+                DragGesture(minimumDistance: .zero)
+                    .onChanged { value in
+                        isDragging = true
+                        calendarType = verticalDragOffset == 0 ? .week : .month
+                        
+                        if initialDragOffset == nil {
+                            initialDragOffset = verticalDragOffset
+                        }
+                        
+                        verticalDragOffset = max(.zero, min((initialDragOffset ?? 0) + value.translation.height, Constants.monthHeight - Constants.dayHeight))
+                        
+                        dragProgress = verticalDragOffset / (Constants.monthHeight - Constants.dayHeight)
+                    }
+                    .onEnded { value in
+                        isDragging = false
+                        initialDragOffset = nil
+                        
+                        withAnimation {
+                            switch calendarType {
+                            case .week:
+                                if verticalDragOffset > Constants.monthHeight/3 {
+                                    verticalDragOffset = Constants.monthHeight - Constants.dayHeight
+                                } else {
+                                    verticalDragOffset = 0
+                                }
+                            case .month:
+                                if verticalDragOffset < Constants.monthHeight/3 {
+                                    verticalDragOffset = 0
+                                } else {
+                                    verticalDragOffset = Constants.monthHeight - Constants.dayHeight
+                                }
                             }
-                            
-                            verticalDragOffset = max(.zero, min((initialDragOffset ?? 0) + value.translation.height, Constants.monthHeight - Constants.dayHeight))
                             
                             dragProgress = verticalDragOffset / (Constants.monthHeight - Constants.dayHeight)
+                        } completion: {
+                            calendarType = verticalDragOffset == 0 ? .week : .month
                         }
-                        .onEnded { value in
-                            isDragging = false
-                            initialDragOffset = nil
-                            
-                            withAnimation {
-                                switch calendarType {
-                                case .week:
-                                    if verticalDragOffset > Constants.monthHeight/3 {
-                                        verticalDragOffset = Constants.monthHeight - Constants.dayHeight
-                                    } else {
-                                        verticalDragOffset = 0
-                                    }
-                                case .month:
-                                    if verticalDragOffset < Constants.monthHeight/3 {
-                                        verticalDragOffset = 0
-                                    } else {
-                                        verticalDragOffset = Constants.monthHeight - Constants.dayHeight
-                                    }
-                                }
-                                
-                                dragProgress = verticalDragOffset / (Constants.monthHeight - Constants.dayHeight)
-                            } completion: {
-                                calendarType = verticalDragOffset == 0 ? .week : .month
-                            }
-                        }
-                )
+                    }
+            )
         }
     }
 }

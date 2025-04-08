@@ -12,7 +12,7 @@ struct WeekView: View {
     let week: Week
     let dragProgress: CGFloat
     let hideDifferentMonth: Bool
-     
+    
     @Binding var selectedDate: Date?
     
     init(week: Week, dragProgress: CGFloat, hideDifferentMonth: Bool = false, selectedDate: Binding<Date?>) {
@@ -49,7 +49,3 @@ struct WeekView: View {
         }
     }
 }
-
-//#Preview {
-//    WeekView()
-//}
