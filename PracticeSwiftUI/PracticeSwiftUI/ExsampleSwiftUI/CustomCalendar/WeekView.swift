@@ -26,7 +26,7 @@ struct WeekView: View {
         HStack(spacing: .zero) {
             ForEach(week.days, id: \.self) { date in
                 DayView(date: date, selectedDate: $selectedDate)
-                    .opacity(isDayVisible(for: date) ? 1: (1 - dragProgress))
+                    .opacity(isDayVisible(for: date) ? 1 : (1 - dragProgress))
                     .frame(width: .infinity)
                 if week.days.last != date {
                     Spacer()

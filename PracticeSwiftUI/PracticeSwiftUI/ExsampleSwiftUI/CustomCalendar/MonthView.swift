@@ -18,7 +18,7 @@ struct MonthView: View {
     var body: some View {
         VStack(spacing: .zero) {
             ForEach(month.weeks) { week in
-                WeekView(week: week, dragProgress: dragProgress,selectedDate: $selectedDate)
+                WeekView(week: week, dragProgress: dragProgress, hideDifferentMonth: true, selectedDate: $selectedDate)
                     .opacity(focused == week ? 1 : dragProgress)
                     .frame(height: Constants.monthHeight / CGFloat(month.weeks.count))
             }
