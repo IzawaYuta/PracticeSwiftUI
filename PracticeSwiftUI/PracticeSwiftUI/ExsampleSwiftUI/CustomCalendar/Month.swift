@@ -46,7 +46,7 @@ struct Month: Identifiable, Equatable {
                     weeks.insert(
                         Week(days: previousWeekDays, order: .previous),
                         at: 0
-                        )
+                    )
                 }
                 
                 if let previousFirstDate = previousWeekDays.first, !Calendar.isSameMonth(previousFirstDate, firstDay) {
